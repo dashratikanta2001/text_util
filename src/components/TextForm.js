@@ -8,16 +8,21 @@ export default function TextForm(props) {
         // console.log("Uppercase clicked");
         let newText = text.toUpperCase();
         setText(newText)
+        props.showAlert("converted to uppercase","success") //Alert
     }
     const HandleLoClick = () => {
         // console.log("Uppercase clicked");
         let newText = text.toLowerCase();
         setText(newText)
+        props.showAlert("converted to lowercase","success")
+
     }
     const HandleClearClick = () => {
         // console.log("Uppercase clicked");
         let newText = "";
         setText(newText)
+        props.showAlert("text cleared","success")
+
     }
     
     const HandleOnchange = (event) => {
@@ -28,17 +33,21 @@ export default function TextForm(props) {
         var text = document.getElementById("myBox");
         text.select();
         navigator.clipboard.writeText(text.value);
+        props.showAlert("copied to clipboard","success")
+
     }
     const HandleExtraSpaces = () => {
         let newText = text.split(/[ ]+/);
         setText(newText.join(" "))
+        props.showAlert("extra spaces removed","success")
+
     }
   return (
       <>
-    <div className="container" style={{backgroundColor : props.mode==='dark'?'#121212':'white', color:props.mode==='dark'?'white':'black'}}>
+    <div className="container" style={{backgroundColor : props.mode==='dark'?'#202124':'white', color:props.mode==='dark'?'white':'black'}}>
         <h1>{props.heading}</h1>
         <div className="mb-3">
-            <textarea className="form-control" id="myBox" rows="8" onChange={HandleOnchange} value={text} style={{backgroundColor : props.mode==='dark'?'#121212':'white', color:props.mode==='dark'?'white':'black'}} placeholder="Enter text here"></textarea>
+            <textarea className="form-control" id="myBox" rows="8" onChange={HandleOnchange} value={text} style={{backgroundColor : props.mode==='dark'?'#303134':'white', color:props.mode==='dark'?'white':'black'}} placeholder="Enter text here"></textarea>
         </div>
         <button className="btn btn-primary mx-2" onClick={HandleUpClick}>Convert to Uppercase</button>
         <button className="btn btn-primary mx-2" onClick={HandleLoClick}>Convert to Lowercase</button>
