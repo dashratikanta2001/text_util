@@ -50,11 +50,11 @@ export default function TextForm(props) {
         <div className="mb-3">
             <textarea className="form-control" id="myBox" rows="8" onChange={HandleOnchange} value={text} style={{backgroundColor : props.mode==='dark'?'#303134':'white', color:props.mode==='dark'?'white':'black'}} placeholder="Enter text here"></textarea>
         </div>
-        <button disabled={text.length===0} className="btn btn-primary mx-2" onClick={HandleUpClick}>Convert to Uppercase</button>
-        <button disabled={text.length===0} className="btn btn-primary mx-2" onClick={HandleLoClick}>Convert to Lowercase</button>
-        <button disabled={text.length===0} className="btn btn-primary mx-2" onClick={HandleCopyClick}>Copy Text</button>
-        <button disabled={text.length===0} className="btn btn-primary mx-2" onClick={HandleClearClick}>Clear Text</button>
-        <button disabled={text.length===0} className="btn btn-primary mx-2" onClick={HandleExtraSpaces}>Clear Extra  spaces</button>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={HandleUpClick}>Convert to Uppercase</button>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={HandleLoClick}>Convert to Lowercase</button>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={HandleExtraSpaces}>Clear Extra  spaces</button>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={HandleCopyClick}>Copy Text</button>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={HandleClearClick}>Clear Text</button>
     
         <div className="container my-3">
             <h2>Your text summary</h2>
